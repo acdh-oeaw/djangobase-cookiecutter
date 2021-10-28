@@ -1,0 +1,8 @@
+{
+    "directory_name": "my-new-project",
+    "project_title": "My New Project",
+    "project_abbr": "mnp",
+    "_copy_without_render": [
+        "*.html"
+    ]
+}
