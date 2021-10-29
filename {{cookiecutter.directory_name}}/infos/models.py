@@ -8,28 +8,28 @@ class ProjectInst(models.Model):
     name = models.CharField(
         max_length=300, blank=True,
         verbose_name="Name"
-        )
+    )
     abbr = models.CharField(
         max_length=300, blank=True,
         verbose_name="Abbreviation"
-        )
+    )
     description = models.TextField(
         blank=True,
         verbose_name="Short description of the Institution"
-        )
+    )
     website = models.URLField(
         max_length=300, blank=True,
         verbose_name="Link to the Institution's website"
-        )
+    )
     logo_url = models.URLField(
         max_length=300, blank=True,
         verbose_name="Link to the Insitution's Logo",
-        )
+    )
     norm_url = models.URLField(
         max_length=300, blank=True,
         verbose_name="Norm Data URL (OCRID, GND, VIAF, ...)",
         help_text="URL to any normdata record of the institution"
-        )
+    )
 
     class Meta:
 
@@ -85,25 +85,25 @@ class TeamMember(models.Model):
     name = models.CharField(
         max_length=300, blank=True,
         verbose_name="Name"
-        )
+    )
     description = models.TextField(
         blank=True,
         verbose_name="Short description of the Person"
-        )
+    )
     website = models.URLField(
         max_length=300, blank=True,
         verbose_name="Link to the person's website"
-        )
+    )
     role = models.CharField(
         max_length=300, blank=True,
         verbose_name="The person's role in the project",
         help_text="will be used to group the team member"
-        )
+    )
     norm_url = models.URLField(
         max_length=300, blank=True,
         verbose_name="Norm Data URL (OCRID, GND, VIAF, ...)",
         help_text="URL to any normdata record of the person"
-        )
+    )
 
     class Meta:
 
@@ -160,15 +160,15 @@ class AboutTheProject(models.Model):
     title = models.CharField(
         max_length=300, blank=True,
         verbose_name="Project's Title"
-        )
+    )
     subtitle = models.CharField(
         max_length=300, blank=True,
         verbose_name="Project's Sub Title"
-        )
+    )
     description = models.TextField(
         blank=True,
         verbose_name="Project Description"
-        )
+    )
     author = models.CharField(
         max_length=250,
         blank=True,
