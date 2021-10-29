@@ -1,6 +1,6 @@
 import os
 from django.conf import settings
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 
 cwd = settings.BASE_DIR
 
@@ -15,13 +15,14 @@ class Command(BaseCommand):
         counter = 0
         for root, dirs, files in os.walk(cwd):
             for file in files:
-                if 'migrations' in os.path.join(root, file) and '00' in os.path.join(root, file):
+                if 'migrations' in os.path.join(root, file)\
+                        and '00' in os.path.join(root, file):
                     if 'myenv' in os.path.join(root, file):
                         pass
                     else:
                         deleted_files.append((os.path.join(root, file)))
                         os.remove(os.path.join(root, file))
                         counter = +1
-        self.stdout.write("Following {} files have been deleted".format(counter))
+        self.stdout.write(f"Following {counter} files have been deleted")
         for x in deleted_files:
             self.stdout.write("Deleted: {}".format(x))

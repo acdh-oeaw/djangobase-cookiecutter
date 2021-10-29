@@ -2,7 +2,7 @@
 # (by default) in the base.html and index.html
 
 PROJECT_METADATA = {
-    'title': '{{cookiecutter.project_title}}',
+    'title': 'My New Project',
     'author': 'Peter Andorfer',
     'subtitle': 'A django project to bootstrap further web-app developments',
     'description': 'A django project to bootstrap further web-app developments',
