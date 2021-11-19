@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # start-server.sh
-echo "Hello from Projet {{cookiecutter.project_title}}"
+echo "Hello from Project {{cookiecutter.project_title}}"
 python manage.py collectstatic --no-input
 if [ -n "$MIGRATE" ] ; then
     (echo "making migrations and running them"
