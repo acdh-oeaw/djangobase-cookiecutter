@@ -15,8 +15,8 @@ jobs:
         python-version: 3.8
     - uses: actions/cache@v2
       with:
-        path: ${{ env.pythonLocation }}
-        key: ${{ env.pythonLocation }}-${{ hashFiles('requirements_dev.txt') }}
+        path: ${{ "{{" }} env.pythonLocation {{ "}}" }}
+        key: ${{ "{{" }} env.pythonLocation {{ "}}" }}-${{ "{{" }} hashFiles('requirements_dev.txt') {{ "}}" }}
 
     - name: Install dependencies
       run: |
@@ -30,6 +30,6 @@ jobs:
     - name: "Upload coverage to Codecov"
       uses: codecov/codecov-action@v1
       with:
-        token: ${{secrets.CODECOV_TOKEN}}
+        token: ${{ "{{" }}secrets.CODECOV_TOKEN{{ "}}" }}
         file: ./coverage.xml
         fail_ci_if_error: true
