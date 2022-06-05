@@ -22,7 +22,8 @@ The current repo should ease the process of setting up a djangobaseproject-based
 * change into the new created repo, by default `$ my-new-project`
 * create a virtual env
 * install requierements `pip install -r requirements.txt`
-* *optional* modify database settings in `djangobaseproject/settings.py`
-* *optional* add/modfiy environment-variables in `.env`
+* *optional* add/modfiy environment-variables in `env.default`, rename it into e.g. `env.secret`
+* *optional* change `set_env_varibales.sh` so it uses your actual env-file
+
 * run `python manage.py migrate`
 * start developing
