@@ -34,7 +34,9 @@ ALLOWED_HOSTS = [
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [{% if cookiecutter.appcreator == 'yes' %}
+    "dal",
+    "dal_select2",{% endif %}
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -45,8 +47,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "django_filters",
     "django_tables2",
-    "django_spaghetti",
-    "appcreator",
+    "django_spaghetti",{% if cookiecutter.appcreator == 'yes' %}
+    "appcreator",{% endif %}
     "webpage",
     "browsing",
     "infos",

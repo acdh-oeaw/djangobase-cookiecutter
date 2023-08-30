@@ -4,6 +4,7 @@ django-spaghetti-and-meatballs==0.4.2
 Django>=4,<5
 requests>=2.25{% if cookiecutter.database == 'postgres' %}
 psycopg2-binary{% endif %}{% if cookiecutter.appcreator == 'yes' %}
+django-autocomplete-light>=3.9,<4
 pandas
 jinja2
 {% endif %}
