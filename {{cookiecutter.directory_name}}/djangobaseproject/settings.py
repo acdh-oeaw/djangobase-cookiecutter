@@ -101,9 +101,7 @@ if os.environ.get("POSTGRES_DB"):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.environ.get(
-                "POSTGRES_DB", "{{ cookiecutter.project_abbr }}"
-            ),
+            "NAME": os.environ.get("POSTGRES_DB", "{{ cookiecutter.project_abbr }}"),
             "USER": os.environ.get("POSTGRES_USER", "postgres"),
             "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "postgres"),
             "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
