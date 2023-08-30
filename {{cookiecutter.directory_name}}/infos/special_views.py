@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from webpage.utils import PROJECT_METADATA as PM
+from webpage.metadata import PROJECT_METADATA as PM
 from . models import AboutTheProject, TeamMember
 
 

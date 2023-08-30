@@ -5,5 +5,5 @@ Django>=4,<5
 requests>=2.25{% if cookiecutter.database == 'postgres' %}
 psycopg2-binary{% endif %}{% if cookiecutter.appcreator == 'yes' %}
 pandas
-jinj2
+jinja2
 {% endif %}
