@@ -10,7 +10,7 @@ urlpatterns = [
         special_views.SpecialAboutView.as_view(),
         name="about-the-project",
     ),
-    path("about", views.AboutTheProjectListView.as_view(), name="about_browse"),
+    path("about/", views.AboutTheProjectListView.as_view(), name="about_browse"),
     path(
         "about/detail/<int:pk>",
         views.AboutTheProjectDetailView.as_view(),
@@ -25,7 +25,7 @@ urlpatterns = [
         views.AboutTheProjectDelete.as_view(),
         name="about_delete",
     ),
-    path("teammember", views.TeamMemberListView.as_view(), name="teammember_browse"),
+    path("teammember/", views.TeamMemberListView.as_view(), name="teammember_browse"),
     path(
         "teammember/detail/<int:pk>",
         views.TeamMemberDetailView.as_view(),
@@ -44,7 +44,7 @@ urlpatterns = [
         views.TeamMemberDelete.as_view(),
         name="teammember_delete",
     ),
-    path("projectinst", views.ProjectInstListView.as_view(), name="projectinst_browse"),
+    path("projectinst/", views.ProjectInstListView.as_view(), name="projectinst_browse"),
     path(
         "projectinst/detail/<int:pk>",
         views.ProjectInstDetailView.as_view(),
