@@ -21,10 +21,6 @@ The current repo should ease the process of setting up a djangobaseproject-based
     "redmine_id": "18716",
     "appcreator": ["yes", "no"],
     "database": ["postgres", "sqlite"],
-    "_copy_without_render": [
-        "*.html",
-        "appcreator/code_templates.py"
-    ]
 }
 ```
 * change into the new created repo, by default `$ my-new-project`
@@ -35,3 +31,34 @@ The current repo should ease the process of setting up a djangobaseproject-based
 
 * run `python manage.py migrate`
 * start developing
+
+
+### appcreator
+
+```shell
+    pip install cookiecutter​
+
+    cookiecutter gh:acdh-oeaw/djangobase-cookiecutter​
+
+    cd my-new-project​
+
+    python –m venv venv​
+
+    source venv/bin/activate​
+
+    pip install -r requirements_dev.txt​
+
+    source set_env_varibales.sh​
+
+    Add SHEET_ID = "1B_KjrACzkiPQ3qJ603l5eJCow4OQEffZPUnnT4DFGoc" to settings.py​
+
+    python manage.py startapp archiv​
+
+    python manage.py create_files​
+
+    Add "archiv" to INSTALLED_APPS in settings.py​
+
+    Add archiv.urls and archiv.dal_urls to urls.py​
+
+    Run python manage.py makemigrations && python manage.py migrate
+```
