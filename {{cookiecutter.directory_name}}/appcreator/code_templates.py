@@ -378,7 +378,8 @@ from next_prev import next_in_order, prev_in_order
 try:
     from vocabs.models import SkosConcept
 except ModuleNotFoundError:
-    passfrom browsing.browsing_utils import model_to_dict
+    pass
+from browsing.browsing_utils import model_to_dict
 
 
 def set_extra(self, **kwargs):
