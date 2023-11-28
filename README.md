@@ -17,7 +17,15 @@ The current repo should ease the process of setting up a djangobaseproject-based
     "directory_name": "my-new-project",
     "project_title": "My New Project",
     "project_abbr": "mnp",
-} 
+    "github": "https://github.com/acdh-oeaw/djangobaseproject",
+    "redmine_id": "18716",
+    "appcreator": ["yes", "no"],
+    "database": ["postgres", "sqlite"],
+    "_copy_without_render": [
+        "*.html",
+        "appcreator/code_templates.py"
+    ]
+}
 ```
 * change into the new created repo, by default `$ my-new-project`
 * create a virtual env
