@@ -1,7 +1,10 @@
 from django.apps import apps
 from django.contrib.auth.models import User
 from django.test import Client, TestCase
+from django.urls import reverse
 
+from infos.templatetags.infos_extras import project_insts
+from infos.templatetags.stats_extras import create_object_count
 
 MODELS = list(apps.all_models["infos"].values())
 
@@ -36,3 +39,22 @@ class InfosTest(TestCase):
             if url:
                 response = client.get(url, {"pk": item.id})
                 self.assertEqual(response.status_code, 200)
+
+    def test_004_project_insts(self):
+        self.assertFalse(project_insts())
+
+    def test_005_create_object_count(self):
+        stats = create_object_count()
+        self.assertTrue(len(stats), 1)
+        stats = create_object_count(app="archiv")
+        self.assertTrue(len(stats) > 1)
+
+    def test_006_infos_views(self):
+        for x in [
+            "infos:project-team",
+            "infos:about-the-project",
+            "infos:about_browse",
+        ]:
+            url = reverse(x)
+            r = client.get(url)
+            self.assertTrue(r.status_code, 200)
