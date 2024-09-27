@@ -7,9 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_NAME = "{{cookiecutter.project_abbr}}"
 
 
-ACDH_IMPRINT_URL = (
-    "https://shared.acdh.oeaw.ac.at/acdh-common-assets/api/imprint.php?serviceID="
-)
+ACDH_IMPRINT_URL = "https://imprint.acdh.oeaw.ac.at/"
+
 REDMINE_ID = "{{ cookiecutter.redmine_id }}"
 
 # Quick-start development settings - unsuitable for production
