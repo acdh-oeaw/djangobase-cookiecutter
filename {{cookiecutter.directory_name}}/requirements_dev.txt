@@ -1,4 +1,4 @@
 -r requirements.txt
-flake8>=6.0.0,<7
-black>=23.7.0,<24
-coverage>=7.3,<8
+flake8
+black
+coverage

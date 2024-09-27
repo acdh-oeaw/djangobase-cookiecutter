@@ -94,7 +94,7 @@ def user_logout(request):
 
 
 def handler404(request, exception):
-    return render(request, "webpage/404-error.html", locals())
+    return render(request, "404-error.html", locals())
 
 
 def project_info(request):

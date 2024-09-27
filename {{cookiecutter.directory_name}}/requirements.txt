@@ -1,10 +1,9 @@
-acdh-django-browsing>=2.0
+acdh-django-browsing>=2.0,<3
 django-next-prev==1.1.0
 django-spaghetti-and-meatballs==0.4.2
-Django>=4,<5
-requests>=2.25{% if cookiecutter.database == 'postgres' %}
-psycopg2-binary{% endif %}{% if cookiecutter.appcreator == 'yes' %}
+Django>=5,<6
+requests>=2.25
+psycopg2-binary
 django-autocomplete-light>=3.9,<4
 pandas
 jinja2
-{% endif %}
