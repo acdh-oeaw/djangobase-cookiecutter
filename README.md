@@ -20,7 +20,6 @@ The current repo should ease the process of setting up a djangobaseproject-based
     "project_abbr": "mnp",
     "github": "https://github.com/acdh-oeaw/djangobaseproject",
     "redmine_id": "18716",
-    "appcreator": ["yes", "no"],
     "database": ["postgres", "sqlite"],
 }
 ```
@@ -31,16 +30,3 @@ The current repo should ease the process of setting up a djangobaseproject-based
 
 * run `uv run python manage.py migrate`
 * start developing
-
-### appcreator
-
-Add `SHEET_ID = "1B_KjrACzkiPQ3qJ603l5eJCow4OQEffZPUnnT4DFGoc"` to settings.py​
-
-```shell
-    uv run python manage.py startapp archiv​
-    uv run python manage.py create_files​
-```
-
-* Add "archiv" to INSTALLED_APPS in settings.py​
-* Add archiv.urls and archiv.dal_urls to urls.py​
-* Run migration `uv run python manage.py makemigrations && python manage.py migrate`

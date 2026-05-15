@@ -6,12 +6,9 @@ short description of the project
 
 * clone the repo
 * change into the project's root directory e.g. `cd {{cookiecutter.directory_name}}`
-* create a virtual environment e.g. `virutalenv env` and activate it `source env/bin/activate`
-* install required packages `pip install -r requirements_dev.txt`
-* run migrations `python manage.py migrate`
-* start the dev sever `python manage.py runserver`
+* run migrations `uv run manage.py migrate`
+* start the dev sever `uv run manage.py runserver`
 * go to [http://127.0.0.1:8000](http://127.0.0.1:8000/) and check if everything works
-
 
 ## Docker
 
@@ -21,7 +18,6 @@ At the ACDH-CH we use a centralized database-server. So instead of spawning a da
 
 * `docker build -t {{cookiecutter.project_abbr}}:latest .`
 * `docker build -t {{cookiecutter.project_abbr}}:latest --no-cache .`
-
 
 ### running the image
 
