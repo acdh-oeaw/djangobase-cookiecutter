@@ -1,23 +1,12 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_NAME = "{{cookiecutter.project_abbr}}"
-
-
 ACDH_IMPRINT_URL = "https://imprint.acdh.oeaw.ac.at/"
-
 REDMINE_ID = "{{ cookiecutter.redmine_id }}"
+SECRET_KEY = os.environ.get("SECRET_KEY", "zflMvZTC")
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "{{ random_ascii_string(8) }}")
-
-# SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get("DEBUG"):
     DEBUG = True
 else:
@@ -31,11 +20,9 @@ ALLOWED_HOSTS = [
     ADD_ALLOWED_HOST,
 ]
 
-# Application definition
-
-INSTALLED_APPS = [{% if cookiecutter.appcreator == 'yes' %}
+INSTALLED_APPS = [
     "dal",
-    "dal_select2",{% endif %}
+    "dal_select2",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,23 +33,21 @@ INSTALLED_APPS = [{% if cookiecutter.appcreator == 'yes' %}
     "crispy_bootstrap5",
     "django_filters",
     "django_tables2",
-    "django_spaghetti",{% if cookiecutter.appcreator == 'yes' %}
-    "appcreator",{% endif %}
+    "django_spaghetti",
     "webpage",
     "browsing",
-    "infos",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-SPAGHETTI_SAUCE = {
-    "apps": [
-        "infos",
-    ],
-    "show_fields": False,
-    "exclude": {"auth": ["user"]},
-}
+# SPAGHETTI_SAUCE = {
+#     "apps": [
+#         "",
+#     ],
+#     "show_fields": False,
+#     "exclude": {"auth": ["user"]},
+# }
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -100,24 +85,17 @@ TEMPLATES = [
 WSGI_APPLICATION = "djangobaseproject.wsgi.application"
 
 
-if os.environ.get("POSTGRES_DB"):
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.environ.get("POSTGRES_DB", "{{ cookiecutter.project_abbr }}"),
-            "USER": os.environ.get("POSTGRES_USER", "postgres"),
-            "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "postgres"),
-            "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
-            "PORT": os.environ.get("POSTEGRES_PORT", "5432"),
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRES_DB", "{{ cookiecutter.project_abbr }}"),
+        "USER": os.environ.get("POSTGRES_USER", "postgres"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "postgres"),
+        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
+        "PORT": os.environ.get("POSTEGRES_PORT", "5432"),
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+}
+
 
 
 # Password validation

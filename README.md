@@ -20,7 +20,6 @@ The current repo should ease the process of setting up a djangobaseproject-based
     "project_abbr": "mnp",
     "github": "https://github.com/acdh-oeaw/djangobaseproject",
     "redmine_id": "18716",
-    "database": ["postgres", "sqlite"],
 }
 ```
 
