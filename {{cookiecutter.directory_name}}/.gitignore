@@ -30,6 +30,7 @@ node_modules
 
 /myenv
 /env
+.venv/
 
 # other things
 secret.env
