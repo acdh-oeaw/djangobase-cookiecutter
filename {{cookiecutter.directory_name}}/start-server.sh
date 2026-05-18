@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
-# start-server.sh
-echo "Hello from Project {{cookiecutter.project_title}}"
-python manage.py collectstatic --no-input
-if [ -n "$MIGRATE" ] ; then
-    (echo "making migrations and running them"
-    python manage.py makemigrations --no-input
-    python manage.py migrate --no-input)
-fi
-if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ] ; then
-    (echo "creating superuser ${DJANGO_SUPERUSER_USERNAME}" && python manage.py createsuperuser --no-input --noinput --email 'blank@email.com')
-fi
-gunicorn djangobaseproject.wsgi --user www-data --bind 0.0.0.0:8010 --workers 3 & nginx -g "daemon off;"
+echo "Hello from {{ cookiecutter.project_title }}"
+uv run manage.py collectstatic --no-input
+echo "running migrations"
+uv run manage.py migrate --no-input
+uv run gunicorn dboeannotation.wsgi --user www-data --bind 0.0.0.0:8010 --workers 3 & nginx -g "daemon off;"
